@@ -14,6 +14,6 @@ name = "production"
 URL = "s3://shawn-strickland-public-site?region=us-east-1"
 
 [outputs]
-  home = ["HTML", "RSS", "SEARCH"]
+  home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
   page = ["HTML", "RSS"] #Need all links with uglyURLs (uglyURLs = true)
