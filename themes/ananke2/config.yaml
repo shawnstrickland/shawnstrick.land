@@ -1,0 +1,12 @@
+module:
+  hugoVersion:
+    min: "0.84.0"
+    
+params:
+  ananke_socials:
+  - name: github
+    url: https://github.com/shawnstrickland
+  - name: linkedin
+    url: https://linkedin.com/in/shawnstrickland
+  - name: stackoverflow
+    url: https://stackoverflow.com/users/7106420/shawn
