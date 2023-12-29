@@ -1,0 +1,4 @@
+baseURL = 'https://shawnstrick.land/'
+languageCode = 'en-us'
+title = 'Shawn Strickland'
+theme = 'ananke'
