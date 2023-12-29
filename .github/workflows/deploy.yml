@@ -1,35 +1,28 @@
-name: CI
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+name: Upload website data
+on: [push, pull_request]
+
 jobs:
-  deploy:
+  upload_data:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Git checkout
-        uses: actions/checkout@v2
+      - name: Git Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: recursive
 
-      - name: Update theme
-        # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
-        run: git submodule update --init --recursive
-
-      - name: Setup hugo
+      - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.64.0"
+          hugo-version: 'latest'
 
-      - name: Build
-        # remove --minify tag if you do not need it
-        # docs: https://gohugo.io/hugo-pipes/minification/
+      - name: Build Site
         run: hugo --minify
 
-      - name: Deploy site
-        uses: plopcas/hugo-s3-action@v1.4.1
-        env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          MINIFY: 'true'
+#      - name: Deploy site
+#        uses: plopcas/hugo-s3-action@v1.4.1
+#        env:
+#          AWS_REGION: ${{ secrets.AWS_REGION }}
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          MINIFY: 'true'
