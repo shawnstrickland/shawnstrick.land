@@ -3,16 +3,6 @@ languageCode = 'en-us'
 title = 'Shawn Strickland'
 theme = 'ananke2'
 
-[deployment]
-
-[[deployment.targets]]
-# An arbitrary name for this target.
-name = "production"
-
-# Amazon Web Services S3; see https://gocloud.dev/howto/blob/#s3
-# For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
-URL = "s3://shawn-strickland-public-site?region=us-east-1"
-
 sectionPagesMenu = 'main'
 
 [params]
@@ -21,3 +11,11 @@ sectionPagesMenu = 'main'
 [services]
   [services.googleAnalytics]
     ID = 'G-WGQCJ056H8'
+
+[deployment]
+  [[deployment.targets]]
+  # An arbitrary name for this target.
+  name = "production"
+  # Amazon Web Services S3; see https://gocloud.dev/howto/blob/#s3
+  # For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
+  URL = "s3://shawn-strickland-public-site?region=us-east-1"
