@@ -15,6 +15,9 @@ URL = "s3://shawn-strickland-public-site?region=us-east-1"
 
 sectionPagesMenu = 'main'
 
+[params]
+  env = 'production'
+
 [services]
   [services.googleAnalytics]
     ID = 'G-WGQCJ056H8'

@@ -18,8 +18,6 @@ jobs:
 
       - name: Build Site
         run: hugo --minify
-        env:
-          HUGO_ENV: production
 
       - name: Deploy site
         uses: plopcas/hugo-s3-action@v1.4.1
