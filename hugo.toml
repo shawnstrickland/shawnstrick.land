@@ -8,6 +8,9 @@ sectionPagesMenu = 'main'
 [params]
   env = 'production'
 
+[markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files
+
 [services]
   [services.googleAnalytics]
     ID = 'G-WGQCJ056H8'
@@ -18,4 +21,4 @@ sectionPagesMenu = 'main'
   name = "production"
   # Amazon Web Services S3; see https://gocloud.dev/howto/blob/#s3
   # For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
-  URL = "s3://shawn-strickland-public-site?region=us-east-1"
+  URL = "s3://shawnstrick.land?region=us-east-1"
