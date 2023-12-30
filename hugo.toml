@@ -22,3 +22,4 @@ sectionPagesMenu = 'main'
   # Amazon Web Services S3; see https://gocloud.dev/howto/blob/#s3
   # For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
   URL = "s3://shawnstrick.land?region=us-east-1"
+  cloudFrontDistributionID = "E3S7Q5IEUAPBTE"
