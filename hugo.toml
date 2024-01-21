@@ -11,10 +11,6 @@ sectionPagesMenu = 'main'
 [markup.goldmark.renderer]
   unsafe = true # Allow HTML in md files
 
-[services]
-  [services.googleAnalytics]
-    ID = 'G-WGQCJ056H8'
-
 [deployment]
   [[deployment.targets]]
   # An arbitrary name for this target.
