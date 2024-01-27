@@ -1,8 +1,11 @@
 +++
-title = 'Referencing_git_file_versions_in_perpetutity'
+title = 'Referencing Git File Versions In Perpetuity'
 date = 2024-01-21T10:15:42-06:00
-draft = true
+draft = false
+featured_image = '/images/git-freakout.png'
+featured_image_caption = 'git freakout'
 +++
+
 A real-world use case for referencing a version of a git file came up in practice recently. The suggested solution was to copy a file in git to a folder for preservation as the project morphed and evolved over time. I suggested there would be a better way. That eventually this old file version would be found by someone and wondered why it was so stale, bounded to cause issues later on.
 
 This sent me down a path of discovering what the best solution for this could be.
