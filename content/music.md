@@ -1,8 +1,8 @@
 +++
 title = 'Music'
-menus = 'main'
 date = 2023-12-28T22:54:20-06:00
 draft = false
+menus = 'main'
 +++
 
 Before I ever got into writing code, I played a lot of guitar. I still do play a lot of guitar, whenever my

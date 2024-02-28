@@ -1,9 +1,9 @@
 +++
 title = 'About'
-menus = 'main'
 description = 'About Shawn Strickland: software developer, guitarist, musician and father.'
 date = 2023-12-28T22:44:50-06:00
 draft = false
+menus = 'main'
 +++
 
 ## TL;DR
