@@ -3,8 +3,6 @@ languageCode = 'en-us'
 title = 'Shawn Strickland'
 theme = 'ananke'
 
-sectionPagesMenu = 'main'
-
 [params]
   env = 'production'
 
