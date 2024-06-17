@@ -4,8 +4,6 @@ module:
     
 params:
   ananke_socials:
-  - name: tableau
-    url: https://public.tableau.com/app/profile/shawn.strickland/vizzes
   - name: github
     url: https://github.com/shawnstrickland
   - name: linkedin
