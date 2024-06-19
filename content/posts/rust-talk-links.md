@@ -1,7 +1,7 @@
 +++
 title = 'Rust Talk Links'
 date = 2024-06-18T15:10:10-06:00
-draft = true
+draft = false
 tags = ['talks', 'speaker notes']
 +++
 
