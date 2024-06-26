@@ -15,6 +15,10 @@ I hope you enjoyed it!
 
 [Understanding Rust's Borrow Checker](https://blog.logrocket.com/introducing-rust-borrow-checker/)
 
+[Rocket Web Framework](https://rocket.rs)
+
+[Actix Web Framework](https://actix.rs)
+
 [The Art of WebAssembly Book](https://wasmbook.com)
 
 [S-Expressions](https://developer.mozilla.org/en-US/docs/WebAssembly/Understanding_the_text_format#s-expressions)
