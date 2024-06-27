@@ -9,6 +9,8 @@ The following are the links from my presentation at KCDC called "A Web Developer
 
 I hope you enjoyed it!
 
+For full slide export, (click here)[https://shawnstrick.land/pdfs/web_dev_guide_to_rust.pdf].
+
 [Ahead of time compilation](https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/getting-started.html#:~:text=Rust%20is%20an%20ahead-of,it%20even%20without%20Rust%20installed.)
 
 [White House Paper Memory Safety](https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf)
