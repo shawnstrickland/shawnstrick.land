@@ -31,6 +31,8 @@ I hope you enjoyed it!
 
 [DynamoDB Crate Example](https://github.com/awsdocs/aws-doc-sdk-examples/blob/main/rustv1/examples/dynamodb/src/scenario/add.rs#L25)
 
+[Rust Futures (async/await)](https://rust-lang.github.io/async-book/)
+
 [Azure SDK for Rust](https://github.com/Azure/azure-sdk-for-rust)
 
 [Azure Crates](https://crates.io/teams/github:azure:azure-sdk-publish-rust)
