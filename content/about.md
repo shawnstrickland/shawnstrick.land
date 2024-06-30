@@ -8,8 +8,8 @@ menus = 'main'
 
 ## TL;DR
 Hi, I'm Shawn and I like to talk about technology, music, and data. I'm a DIYer,
-father of 3, ultralearner, guitarist, musician, software developer, data junkie,
-and general technologist. On my site you'll find a mix of those topics, even some stuff that's unreleated.
+father of 3, musician, software developer, data junkie, and general technologist. 
+On my site you'll find a mix of those topics, even some stuff that's unreleated.
 
 I hope you enjoy!
 
@@ -47,9 +47,3 @@ My journey as a father of three began in 2012, and it's literally the best job I
 are reflective of how having children has changed me (for the better). Though I'm passionate about many professional endeavors,
 God, my children and family always come first. We also have the priviledge of hosting foreign exchange students, something I highly recommend
 to anyone who is able to do so.
-
-## Ultralearner
-Ultralearning is a concept that's brand new to me but absolutely fascinating. From what I can tell, it was coined by
-[Scott Young](https://www.scotthyoung.com/blog/ultralearning/). I would imagine a lot of us developers are ultralearners,
-it's a fascinating subject and book and I highly recommend you check it out and begin to apply some of the principals to your
-upskilling and continued education.
