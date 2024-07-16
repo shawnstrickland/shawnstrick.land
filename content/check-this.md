@@ -5,6 +5,12 @@ draft = false
 menus = 'footer'
 +++
 
+## Ted Gioia
+I first heard of Ted growing up and reading through his expansive jazz books. Now he has his own SubStack where he constantly drops 🔥. [Check it out](https://www.honest-broker.com).
+- [The Real Crisis in Humanities Isn't Happening at College](https://www.honest-broker.com/p/the-real-crisis-in-humanities-isnt)
+- [How to Break Free from Dopamine Culture](https://www.honest-broker.com/p/how-to-break-free-from-dopamine-culture)
+- [Musicians Used to be First Responders](https://www.honest-broker.com/p/why-did-medieval-cities-hire-street)
+
 ## Software Folks/Groups
 - [Scott Hanselman](https://hanselman.com)
 - [Center for Humane Technology](https://humanetech.com)
