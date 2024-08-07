@@ -12,7 +12,7 @@ Hi, I'm Shawn and I like to talk about music, technology, and data. I'm a DIYer,
 I hope you enjoy!
 
 ## Music
-I originally went to school for a Music Education degree (Actually, [Jazz Studies at the amazing University of North Texas](https://music.unt.edu)). It was a ton of fun, but highly competitive. Life happened shortly after that, and I found myself in a completely different industry. However, my passion for music, teaching and performance has never waned. I believe music educators are instrumental to change in our youth and I have everything to thank for a handful of music educators who influenced me earlier in life.
+I originally went to school for a Music Education degree (Actually, [Jazz Studies at the amazing University of North Texas](https://music.unt.edu)). It was a ton of fun, but highly competitive. Life happened shortly after that, and I found myself in a completely different industry. However, my passion for music, teaching and performance has never waned.
 
 ## Technology
 Currently, the stuff that really interests me are the worlds of Cloud Computing, Serverless, Functional Programming, Data Science and Machine Learning. In the past I've dealt heavily with the LAMP stack, been a full-stack javascript developer, worked in the dotnet world, worked with ETL systems, and navigated my way around development in the world of Salesforce.
