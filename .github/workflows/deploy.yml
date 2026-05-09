@@ -1,29 +1,47 @@
-name: Upload website data
-on: [push, pull_request]
+name: Deploy to S3
+
+on:
+  push:
+    branches: [main]
+  pull_request:
 
 jobs:
-  upload_data:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Git Checkout
+      - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
+          node-version: 22
+          cache: 'npm'
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Deploy to S3
+        if: github.ref == 'refs/heads/main'
+        uses: jakejarvis/s3-sync-action@master
         with:
-          hugo-version: 'latest'
-          extended: true
-
-      - name: Build Site
-        run: hugo --minify
-
-      - name: Deploy site
-        uses: plopcas/hugo-s3-action@v1.4.2
+          args: --delete
         env:
+          AWS_S3_BUCKET: shawnstrick.land
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          SOURCE_DIR: dist
+
+      - name: Invalidate CloudFront
+        if: github.ref == 'refs/heads/main'
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: E3JJDUTVEBCLNX
+          PATHS: '/*'
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          MINIFY: 'true'
-          HUGO_VERSION: 'latest'

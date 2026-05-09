@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Music"
+  description="Shawn Strickland's music: classical guitar, recordings, and educational background."
+>
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-bold mb-8">Music</h1>
+
+    <div class="prose prose-gray max-w-none">
+      <h3>Educational Internship Program</h3>
+      <p>
+        My high school has an amazing program which was in its infancy while I was a senior in high
+        school. I was able to spend about half of my day my senior year assisting a local middle school
+        band director in his band classes. This instilled a great passion for teaching music in my
+        life, which still hasn't left all these years later.
+      </p>
+
+      <h3>Cruise Control</h3>
+      <p>Cruise Control was a group that I recorded a record with before we all went off to college.</p>
+    </div>
+
+    <div class="my-6">
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/album/0VxUcfS1K7ZAlqWo7kyC4I?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <div class="prose prose-gray max-w-none">
+      <h3>Classical</h3>
+      <p>
+        I've studied <em>classical</em> guitar for many years as it was a required parallel for jazz
+        guitar music majors. I was lucky enough to study with{' '}
+        <a href="https://parkvillemo.org/front-page/small-business-spotlight/bentley-guitar-studios/" target="_blank" rel="noopener noreferrer">
+          Mark Bentley
+        </a>{' '}
+        for many years and grew a love for performing classical guitar music.
+      </p>
+      <p>Fauré's Pavane is a recording I performed with Elaine Brown:</p>
+    </div>
+
+    <div class="my-6">
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/xg-0-G7znvA"
+        title="Faure Pavane Choice"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="mt-8 p-6 bg-amber-50 border border-amber-200 rounded-md">
+      <h3 class="font-serif font-semibold text-lg mb-2">Interested in lessons?</h3>
+      <p class="text-sm text-gray-600 mb-4">
+        I offer free and premium guitar lessons covering classical technique, fingerstyle, and more.
+      </p>
+      <a
+        href="/lessons"
+        class="inline-block bg-amber-700 text-white text-sm px-5 py-2 rounded hover:bg-amber-800 transition-colors font-medium"
+      >
+        Browse lessons &rarr;
+      </a>
+    </div>
+  </div>
+</BaseLayout>
