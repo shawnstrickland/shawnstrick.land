@@ -1,35 +1,22 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/go
+// For format details, see https://aka.ms/devcontainer.json
 {
-	"name": "Go",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/go:1-1.21-bullseye",
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
-		"ghcr.io/devcontainers/features/hugo:latest": {
-			// "VARIANT": "hugo_extended",
-			"extended": true
-		}
-	},
+	"name": "shawnstrick.land (Astro)",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:22",
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [1313],
+	// Astro dev server
+	"forwardPorts": [4321],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "hugo server",
+	"postCreateCommand": "npm ci",
+	"postAttachCommand": "npm run dev -- --host",
 
-	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"golang.go",
-				"dbaeumer.vscode-eslint",
+				"astro-build.astro-vscode",
+				"bradlc.vscode-tailwindcss",
 				"github.vscode-pull-request-github",
 				"streetsidesoftware.code-spell-checker"
 			]
 		}
 	}
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }

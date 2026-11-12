@@ -1,4 +1,6 @@
 ---
+import { tagSlug } from '../lib/tags';
+
 interface Props {
   title: string;
   pubDate: Date;
@@ -24,7 +26,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
   {tags && tags.length > 0 && (
     <div class="flex gap-2 flex-wrap mt-3">
       {tags.map(tag => (
-        <span class="text-xs bg-amber-50 text-amber-800 px-2 py-0.5 rounded">{tag}</span>
+        <a href={`/tags/${tagSlug(tag)}/`} class="text-xs bg-amber-50 text-amber-800 px-2 py-0.5 rounded hover:bg-amber-100">{tag}</a>
       ))}
     </div>
   )}

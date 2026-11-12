@@ -1,20 +1,24 @@
 name: Build and deploy
 
+# Every push builds the site, so broken builds show up on any branch.
+# Only pushes to main (or a manual run on main) deploy to S3 + CloudFront.
 on:
   push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -25,19 +29,18 @@ jobs:
       - name: Build site
         run: npm run build
 
-      # Everything below runs only for pushes to main (not PRs or other branches).
       - name: Configure AWS credentials
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: aws-actions/configure-aws-credentials@v4
+        if: github.ref == 'refs/heads/main'
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Sync to S3
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main'
         run: aws s3 sync dist/ s3://shawnstrick.land --delete
 
       - name: Invalidate CloudFront cache
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main'
         run: aws cloudfront create-invalidation --distribution-id E3JJDUTVEBCLNX --paths "/*"
