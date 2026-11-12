@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('lessons');
+  return lessons.map(lesson => ({
+    params: { slug: lesson.slug },
+    props: { lesson },
+  }));
+}
+
+const { lesson } = Astro.props;
+const { Content } = await render(lesson);
+const { title, description, free, level, tags, videoUrl, lsProductId } = lesson.data;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="max-w-3xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-3">
+        {level && <span class="text-xs text-gray-400 capitalize">{level}</span>}
+        <span class={`text-xs px-2 py-0.5 rounded font-medium ${
+          free
+            ? 'bg-green-50 text-green-700 border border-green-200'
+            : 'bg-amber-50 text-amber-800 border border-amber-200'
+        }`}>
+          {free ? 'Free' : 'Premium'}
+        </span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-serif font-bold leading-tight mb-3">{title}</h1>
+      <p class="text-gray-500 text-lg">{description}</p>
+      {tags && tags.length > 0 && (
+        <div class="flex gap-2 flex-wrap mt-4">
+          {tags.map(tag => (
+            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">{tag}</span>
+          ))}
+        </div>
+      )}
+    </div>
+
+    {free ? (
+      <>
+        {videoUrl && (
+          <div class="mb-8 rounded-md overflow-hidden">
+            <iframe
+              width="100%"
+              height="450"
+              src={videoUrl}
+              title={title}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        )}
+        <div class="prose prose-gray max-w-none">
+          <Content />
+        </div>
+      </>
+    ) : (
+      <div class="border border-amber-200 bg-amber-50 rounded-md p-8 text-center">
+        <h2 class="font-serif font-semibold text-xl mb-2">Premium Lesson</h2>
+        <p class="text-gray-600 text-sm mb-6 max-w-md mx-auto">
+          This lesson is available for purchase. You'll get instant access to the video and all
+          supplemental materials.
+        </p>
+        {lsProductId ? (
+          <a
+            href={`https://shawnstrickland.lemonsqueezy.com/checkout/buy/${lsProductId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-amber-700 text-white px-8 py-3 rounded font-medium hover:bg-amber-800 transition-colors"
+          >
+            Unlock this lesson
+          </a>
+        ) : (
+          <p class="text-sm text-gray-400">Coming soon.</p>
+        )}
+      </div>
+    )}
+
+    <div class="mt-12 pt-8 border-t border-gray-200">
+      <a href="/lessons" class="text-sm text-amber-700 hover:underline">&larr; All lessons</a>
+    </div>
+  </article>
+</BaseLayout>

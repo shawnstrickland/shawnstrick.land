@@ -1,0 +1,41 @@
+---
+const navLinks = [
+  { href: '/posts', label: 'Posts' },
+  { href: '/lessons', label: 'Lessons' },
+  { href: '/music', label: 'Music' },
+  { href: '/downloads', label: 'Downloads' },
+  { href: '/about', label: 'About' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+  <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="text-lg font-serif font-bold text-gray-900 hover:text-amber-700 transition-colors">
+      Shawn Strickland
+    </a>
+    <nav class="hidden md:flex items-center gap-6">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`text-sm font-medium transition-colors ${
+            currentPath.startsWith(link.href)
+              ? 'text-amber-700'
+              : 'text-gray-600 hover:text-amber-700'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <!-- Mobile nav: simple overflow scroll -->
+    <nav class="flex md:hidden items-center gap-4 overflow-x-auto">
+      {navLinks.map(link => (
+        <a href={link.href} class="text-sm font-medium text-gray-600 hover:text-amber-700 whitespace-nowrap">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>

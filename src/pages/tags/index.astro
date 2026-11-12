@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { tagSlug } from '../../lib/tags';
+
+const posts = await getCollection('posts', ({ data }) => !data.draft);
+const counts = new Map<string, number>();
+for (const tag of posts.flatMap((p) => p.data.tags ?? [])) {
+  counts.set(tag, (counts.get(tag) ?? 0) + 1);
+}
+const tags = [...counts].sort(([a], [b]) => a.localeCompare(b));
+---
+
+<BaseLayout title="Tags" description="Browse posts by tag.">
+  <div class="max-w-5xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-serif font-bold mb-10">Tags</h1>
+    <ul class="flex flex-wrap gap-3">
+      {tags.map(([tag, count]) => (
+        <li>
+          <a
+            href={`/tags/${tagSlug(tag)}/`}
+            class="inline-block bg-amber-50 text-amber-800 border border-amber-200 px-3 py-1 rounded hover:bg-amber-100 transition-colors"
+          >
+            {tag} <span class="text-amber-600 text-sm">({count})</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
